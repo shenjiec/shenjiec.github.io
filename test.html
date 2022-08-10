@@ -9,7 +9,6 @@
 	<div id="app">
 	  <input type="checkbox" v-model="showRed">變更框線顏色<br>
 	  <div class="block" :class="{redBorder: showRed}">
-	  <img v-bind:src=`./${img}.png` alt="img">
 	  </div></br>	
 	  <input type="number" v-model="number">*2=
 	  <input type="number" v-model="multiplyTwo">
@@ -24,9 +23,8 @@
   const vm = new Vue({
     el: '#app',
     data: {
-	  img: 'vue',
       number: 0,
-	  showRed: false
+      showRed: false
     },
     computed: {
       multiplyTwo: {
