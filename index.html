@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+	<div id="app">
+		<div class="container">
+			<button-add :count="count" @pushcount="getcount"></button-add>
+			{{count}}<br><br>
+			<input type="text" v-model="temp">
+			<button class="btn btn-success" @click=addMsg()>新增</button><br><br>
+			<button-add-list :message="message" @pushindex="removeMsg"></button-add-list>
+		</div>
+	</div>
+</body>
+
+
+<script>
+const vm = new Vue({
+	el:'#app',
+	data:function(){
+		return{
+			count:0,
+			temp:'',
+			message:[]
+		}		
+	},
+	methods:{
+		getcount(count){
+			this.count = count;
+		},
+		addMsg(){
+			if(this.temp!="")
+			{
+				this.message.push(this.temp);
+				this.temp="";
+			}
+		},
+		removeMsg(index){
+			this.message.splice(index,1);
+		}
+	},
+	components:{
+		"button-add":{		
+			props:['count'],
+			template:'<button class="btn btn-info" @click="plus(count)">點擊</button>',
+			methods:{
+				plus(count){
+					count+=1;
+					this.$emit("pushcount",count);
+				}
+			}		
+		},
+		"button-add-list":{
+			props:['message'],
+			methods:{
+				getIndex(index){
+					this.$emit("pushindex",index)
+				}
+			},
+			template:`<ul><li v-for="(messages, index) in message">{{messages}}  <button class="btn btn-danger" @click="getIndex(index)">移除</button></li></ul>`
+		}
+	}
+
+
+})
+
+
+</script>
+</html>
