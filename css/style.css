@@ -1,98 +1,87 @@
 @import './reset.css';
 
+body {
+	background-color: #303030;
+}
+
+.wrapper{
+    min-height: 100%;
+}
+
 .menu {
+	/*border:1px solid black;*/
+	/*border-radius: 20px;*//*圓角*/
 	height: 100px;
 	width: 100vw;
-	background-color: #fff;
-	float: top;
+	background-color: #101010;
+	display:flex;
+	align-items:center;
+	margin:auto;
+}
+
+.menu-div {  
+	/*border:1px solid purple;*/
+	padding: 0 30px;
+	font-size: 3em;	
+}
+
+.menu-div > a {	
+	color: #B39200;
+	text-decoration:none;
+}
+
+.dropdown{
+	/*border:1px solid skyblue;*/
 	text-align: center;
-	display: inline-block;
-	position:relative;
-	flex-wrap: nowrap;
-	min-width:1000px;
+	height:100%;
+	flex:0 0 42%;
+	display:flex;	
+	align-items:center;
+	margin:auto;
 }
 
-.title {
-	width: 300px;
-	height: 100px;
-	float: left;
-}
-
-.menu .title span{	
-	font-size: 2.5em;
-	color: #000000;
-	margin-top: 30px;
-	position:absolute;
-}
-
-.menu ul li a {
-	text-decoration: none;
-	color:#000000
-}
-
-.menu ul li {
-	/*1em 為一般字體大小 等同百分比 這邊因為要讓他比一班字大一點所以，所以使用1.3em*/
+.dropdown ul li {
+    /*1em 為一般字體大小 等同百分比 這邊因為要讓他比一班字大一點所以，所以使用1.3em*/
     font-size: 1.3em;
-	/*設定字體的粗細*/
+    /*設定字體的粗細*/
     font-width:300;
-    padding: 10px 30px;
-	/*文字顏色*/
-    color: #000000;	
-	transition:0.4s;
-	margin-top: 30px;
-	display: inline-block;
-	position: relative;
+    /*文字顏色*/
+    color: #B39200;
+    transition:0.4s;
+    padding: 25px 35px;
+    display: inline-block;
+    position: relative;
 }
 
-.menu ul li:hover {
-    background-color: #E0E0E0;
-    color: #009393;
+.dropdown ul li a {
+	text-decoration: none;
+	color:#B39200
 }
 
-.content1 {
-	height: 600px;
-	width:100vw;
-	text-align: center;
-	background-color: #E0E0E0;
-	position:relative;	
+.dropdown ul li:hover {
+    background-color: #4D4D4D;
+    color: #BD9A00;
 }
 
-.content2 {
-	height: 200px;
-	width:100vw;
-	text-align: center;
-	background-color: #fff;
-	position:realative;	
-}
-
-.footer {
-	height: 200px;
-	width:100vw;
-	text-align: center;
-	background-color: #E0E0E0;
-	position:realative;		
-}
-
-
-
-.menu ul li .dropdown {
+.dropdown ul li .dropdownlist {
   position: relative;
   display: inline-block;
   width: 100%;
   position: absolute;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdownlist:hover .dropdown-content {
     display: block;
 	left:0%;
 	top:100%;
+	z-index:1;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
+    background-color: #666666;
+    min-width: 100%;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
@@ -104,5 +93,35 @@
 }
 
 .dropdown-content a:hover {
-	background-color: #f1f1f1
+	background-color: #f1f1f1;	
+    transition:0.5s;
 }
+
+.content1 {
+	/*border:1px solid red;*/
+	background: url('../images/steel.jpg') no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	background-size: cover;
+	height: 600px;
+	width: 1200px;
+	background-color: #404040;
+	display:flex;
+	align-items:center;
+	margin:auto;
+	opacity: 0.4;	
+}
+
+.footer {
+	/*border:1px solid black;*/
+	height: 200px;
+	width:100vw;
+	text-align: center;
+	background-color: #101010;
+	
+	position: absolute;
+    bottom: 0;
+}
+
+
+
