@@ -1,8 +1,5 @@
 @import './reset.css';
 
-*,*:before,*:after{
-  box-sizing: border-box;
-}
 body{
   font-family: "Noto Sans","Microsoft JhengHei";
 }
@@ -21,11 +18,7 @@ p{
   max-width: 960px;
   margin: 0 auto;
 }
-.clearfix:after{
-  content:'';
-  display:table;
-  clear: both;
-}
+
 .contentbox{
   margin-top: 40px;
   margin-bottom: 20px;
@@ -95,14 +88,13 @@ p{
     z-index: 100;
     background-color:#FAEFEA;
     top:70px;
-    /*選單左置右延伸開始*/
+    
     left:0;
-    right:0;
-    /*選單左置右延伸結束*/
-    /*隱藏選單開始*/
+    right:0;    
+   
     max-height: 0%;
     overflow:hidden;
-    /*隱藏選單結束*/
+    
     transition: max-height 0.38s;
   }
   .menu li{
