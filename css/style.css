@@ -68,7 +68,7 @@ p{
   padding:1.3em  .5em;
 }
 .menu a:hover, .mobile-menu:hover{
-  color: #439CFE;
+  color: #666666;
 }
 .mobile-menu{
   display:none;
