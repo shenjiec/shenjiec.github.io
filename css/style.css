@@ -39,7 +39,7 @@ p{
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);  
 }
 .header{
-  border-bottom:2px solid #F7E3DA;
+  border-bottom:3px solid #FAEFEA;
   background-color: #91D0D7;
   height: 70px;
   position:relative;
@@ -93,7 +93,7 @@ p{
   .menu{
     position: absolute;
     z-index: 100;
-    background-color:#F7E3DA;
+    background-color:#FAEFEA;
     top:70px;
     /*選單左置右延伸開始*/
     left:0;
@@ -107,12 +107,12 @@ p{
   }
   .menu li{
     float:none;
-    border-bottom:1px solid #fff;
+    border-bottom:1px solid #91D0D7;
     text-align: center;
   }
   .menu a{
     padding:.8em 0 .8em .5em;
-    color:#91D0D7;
+    color:#69BFC9;
   }
   .mobile-menu{
     display:block;
