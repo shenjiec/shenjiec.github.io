@@ -30,8 +30,8 @@ p{
   height: 60px;
   background:#F7E3DA;
   display: block; 
-  text-indent: 101%; /*溢出邊界*/  
-  overflow: hidden;/*溢出邊界隱藏*/
+  text-indent: 101%;
+  overflow: hidden;
   white-space: nowrap;
   box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
@@ -47,6 +47,7 @@ p{
 }
 .menu a:hover, .mobile-menu:hover{
   color: #666666;
+  transition: 0.5s;
 }
 .mobile-menu{
   display:none;
@@ -59,8 +60,23 @@ p{
 .content{
   border:2.5px solid #91D0D7;
   border-radius:30px;
-  padding:30px;
+  padding:30px 50px 30px 30px;
   text-align:center; 
+}
+
+.article .item{
+	width:100%;
+	height:150px;
+	margin: 10px;
+	text-align: center;
+	box-shadow: 1px 5px 5px grey;
+}
+.article .item a{
+	font-size:24px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height:100%;
 }
 .footer{  
 	color: #91D0D7;
@@ -82,17 +98,13 @@ p{
   .menu{
     position: absolute;
     z-index: 100;
-    background-color:#FAEFEA;
+    background-color:#FDF9F7;
     top:70px;
 	margin-right:0;
-    /*選單左置右延伸開始*/
     left:0;
     right:0;
-    /*選單左置右延伸結束*/
-    /*隱藏選單開始*/
     max-height: 0%;
     overflow:hidden;
-    /*隱藏選單結束*/
     transition: max-height 0.38s;
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);	
   }
@@ -113,5 +125,11 @@ p{
   }
   .menu.active{
     max-height: 554px;
+  }
+  .article{
+	flex-direction: column;
+  }
+  .article .item{
+	width: 100%;
   }
 }
