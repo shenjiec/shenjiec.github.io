@@ -10,10 +10,18 @@ a{
 p{
   line-height: 1;
   margin-bottom:20px;
+  font-weight:Bold;
 }
 .wrap{
   max-width: 960px;
   margin: 0 auto;
+}
+.bd{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.5);
+  position:absolute;
+  display: none;
 }
 .header{
   border-bottom:3px solid #FAEFEA;
@@ -60,30 +68,85 @@ p{
 .content{
   border:2.5px solid #91D0D7;
   border-radius:30px;
-  padding:30px 50px 30px 30px;
+  padding:30px 15px;
   text-align:center; 
 }
-
+.article {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
 .article .item{
-	width:100%;
-	height:150px;
-	margin: 10px;
-	text-align: center;
-	box-shadow: 1px 5px 5px grey;
+  width:100%;
+  height:150px;
+  margin: 10px;
+  text-align: center;
+  flex:0 0 30%;
 }
 .article .item a{
-	font-size:24px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height:100%;
+  font-weight:Normal;
+  font-size:24px;
+  height:100%;  
+  color:black;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear;
+}
+.article .item a:hover{
+  border-radius: 10px;
+  transform: scale(1.06);
+  transition: 0.3s;
+}
+.bd5-1{
+  border:5px solid #F5A3A3;/*紅*/
+  background-color: rgba(245,163,163,0.2);
+}
+.bd5-2{
+  border:5px solid #A3F5B4;/*綠*/
+  background-color: rgba(163,245,180,0.2);
+}
+.bd5-3{
+  border:5px solid #A3CCF5;/*藍*/
+  background-color: rgba(163,204,245,0.2);
+}
+.bd5-4{
+  border:5px solid #F1A3F5;/*紫*/
+  background-color: rgba(241,163,245,0.2);
+}
+.bd5-5{
+  border:5px solid #F5E0A3;/*黃*/
+  background-color: rgba(245,224,163,0.2);
+}
+.bd5-6{
+  border:5px solid #B9BCDF;/*灰*/
+  background-color: rgba(185,188,223,0.2);
+}
+.bd5-1:hover{
+  background-color: rgba(245,163,163,0.66);
+}
+.bd5-2:hover{
+  background-color: rgba(163,245,180,0.66);
+}
+.bd5-3:hover{
+  background-color: rgba(163,204,245,0.66);
+}
+.bd5-4:hover{
+  background-color: rgba(241,163,245,0.66);
+}
+.bd5-5:hover{
+  background-color: rgba(245,224,163,0.66);
+}
+.bd5-6:hover{
+  background-color: rgba(185,188,223,0.66);
 }
 .footer{  
-	color: #91D0D7;
-	text-align: center;
-	height: 100px;
-	line-height: 100px;
-	margin-top: 50px;
+  color: #91D0D7;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  margin-top: 50px;
 }
 
 @media(max-width:768px){
@@ -93,7 +156,7 @@ p{
     width: 100%;
   }
   .contentbox{
-	  padding:70px 20px 20px 20px;
+	padding:70px 20px 20px 20px;
   }
   .menu{
     position: absolute;
@@ -105,7 +168,7 @@ p{
     right:0;
     max-height: 0%;
     overflow:hidden;
-    transition: max-height 0.38s;
+    transition: max-height 0.3s;
 	box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);	
   }
   .menu li{
@@ -126,10 +189,16 @@ p{
   .menu.active{
     max-height: 554px;
   }
-  .article{
-	flex-direction: column;
+  .bd.active{
+	display: block;
   }
   .article .item{
-	width: 100%;
+    flex:0 0 45%;
+  }
+}
+
+@media screen and (max-width:550px){ 
+  .article .item{
+    flex: 0 0 100%;
   }
 }
