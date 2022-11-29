@@ -5,7 +5,7 @@ header ='<div id="bd" class="bd"></div>\
   </div>\
   <ul id="menu" class="menu">\
 	<li><a href="index.html">Home</a></li>\
-	<li><a href="buildmenu.html">Build</a></li>\
+	<li><a href="buildmenu.html">Pokemon</a></li>\
 	<li><a href="#">menu3</a></li>\
 	<li><a href="#">menu4</a></li>\
 	<li><a href="#">menu5</a></li>\
