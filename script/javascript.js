@@ -6,8 +6,8 @@ function menushow(){
 	bd.classList.toggle('active');
 }
 function clr(){
-	document.getElementById("myPokemon1").value = "";
-	document.getElementById("myPokemon2").value = "";
+	document.getElementById("myPokemon1").selectedIndex = 0;
+	document.getElementById("myPokemon2").selectedIndex = 0;
 	document.getElementById("output0").innerText = "";
 	document.getElementById("output1").innerText = "";
 	document.getElementById("output2").innerText = "";
