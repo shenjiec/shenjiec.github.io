@@ -11,43 +11,63 @@
   <div class="wrap">
 	<script src="./script/header.js"></script>	
     <div class="contentbox">
-      <div class="content">
-      <p>被攻擊方屬性：</p>
-	  <input list="pokemon" id="myPokemon1" name="myPokemon1" class="s-input">
-	  <input list="pokemon" id="myPokemon2" name="myPokemon2" class="s-input">
-		<datalist id="pokemon">
-		  <option value="一般">
-		  <option value="格鬥">
-		  <option value="飛行">
-		  <option value="毒">
-		  <option value="地面">
-		  <option value="岩石">
-		  <option value="蟲">
-		  <option value="幽靈">
-		  <option value="鋼">
-		  <option value="火">
-		  <option value="水">
-		  <option value="草">
-		  <option value="電">
-		  <option value="超能力">
-		  <option value="冰">
-		  <option value="龍">
-		  <option value="惡">
-		  <option value="妖精">
-		</datalist><br/>
-		<button id="btn1" name="btn1" onclick="cal()" class="s-btn btn-lg">計算</button>
-		<button id="btn2" name="btn2" onclick="clr()" class="s-btn btn-lr">重置</button>
-        <p></p>
-        <p id="output0" style="color:purple;"></p>
-        <p id="output1" style="color:green;"></p>
-        <p></p>
-        <p id="output2" style="color:gray;"></p>
-        <p></p>
-        <p id="output3" style="color:black;"></p>
-        <p></p>
-        <p></p>
-        <p></p>
-      </div>
+		<div class="content">
+			<p>被攻擊方屬性：</p>	
+			<select id="myPokemon1" name="myPokemon1" class="s-select">
+				<option value="-1"></option>
+				<option value="0">一般</option>
+				<option value="1">格鬥</option>
+				<option value="2">飛行</option>
+				<option value="3">毒</option>
+				<option value="4">地面</option>
+				<option value="5">岩石</option>
+				<option value="6">蟲</option>
+				<option value="7">幽靈</option>
+				<option value="8">鋼</option>
+				<option value="9">火</option>
+				<option value="10">水</option>
+				<option value="11">草</option>
+				<option value="12">電</option>
+				<option value="13">超能力</option>
+				<option value="14">冰</option>
+				<option value="15">龍</option>
+				<option value="16">惡</option>
+				<option value="17">妖精</option>
+			</select>
+			<select id="myPokemon2" name="myPokemon2" class="s-select">
+				<option value="-1"></option>
+				<option value="0">一般</option>
+				<option value="1">格鬥</option>
+				<option value="2">飛行</option>
+				<option value="3">毒</option>
+				<option value="4">地面</option>
+				<option value="5">岩石</option>
+				<option value="6">蟲</option>
+				<option value="7">幽靈</option>
+				<option value="8">鋼</option>
+				<option value="9">火</option>
+				<option value="10">水</option>
+				<option value="11">草</option>
+				<option value="12">電</option>
+				<option value="13">超能力</option>
+				<option value="14">冰</option>
+				<option value="15">龍</option>
+				<option value="16">惡</option>
+				<option value="17">妖精</option>
+			</select><br/>
+			<button id="btn1" name="btn1" onclick="cal()" class="s-btn btn-lg">計算</button>
+			<button id="btn2" name="btn2" onclick="clr()" class="s-btn btn-lr">重置</button>
+			<p></p>
+			<p id="output0" style="color:purple;"></p>
+			<p id="output1" style="color:green;"></p>
+			<p></p>
+			<p id="output2" style="color:gray;"></p>
+			<p></p>
+			<p id="output3" style="color:black;"></p>
+			<p></p>
+			<p></p>
+			<p></p>
+        </div>
     </div>	
 	
 	<script src="./script/footer.js"></script>
