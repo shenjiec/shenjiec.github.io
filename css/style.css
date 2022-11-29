@@ -12,7 +12,7 @@ p{
   margin-bottom:20px;
   font-weight:Bold;
 }
-.s-input {
+.s-select {
 	text-align:center;
 	width: 120px;
 	height: 50px;
@@ -20,8 +20,8 @@ p{
 	border-radius:15px;
 }
 .s-btn {	
-	width: 128px;
-	height: 55px;
+	width: 120px;
+	height: 50px;
 	font-size: 24px;
 	border-radius:15px;
 }
