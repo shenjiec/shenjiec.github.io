@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>shenjiec</title>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+	<script type="text/javascript" src="script/javascript.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap">
+	<script src="./script/header.js"></script>	
+    <div class="contentbox">
+		<div class="content">
+			<button id="btn0" name="btn0" onclick="location.href='pokeMenu.html'" class="s-btn">上一頁</button><br/><br/>
+			名稱：<input type="text" id="inputname" name="inputname" class="s-input"></input><br><br>
+			屬性：
+			<select id="myPokemon1" name="myPokemon1" class="s-select">
+				<option value="-1"></option>
+				<option value="0">一般</option>
+				<option value="1">格鬥</option>
+				<option value="2">飛行</option>
+				<option value="3">毒</option>
+				<option value="4">地面</option>
+				<option value="5">岩石</option>
+				<option value="6">蟲</option>
+				<option value="7">幽靈</option>
+				<option value="8">鋼</option>
+				<option value="9">火</option>
+				<option value="10">水</option>
+				<option value="11">草</option>
+				<option value="12">電</option>
+				<option value="13">超能力</option>
+				<option value="14">冰</option>
+				<option value="15">龍</option>
+				<option value="16">惡</option>
+				<option value="17">妖精</option>
+			</select>
+			<select id="myPokemon2" name="myPokemon2" class="s-select">
+				<option value="-1"></option>
+				<option value="0">一般</option>
+				<option value="1">格鬥</option>
+				<option value="2">飛行</option>
+				<option value="3">毒</option>
+				<option value="4">地面</option>
+				<option value="5">岩石</option>
+				<option value="6">蟲</option>
+				<option value="7">幽靈</option>
+				<option value="8">鋼</option>
+				<option value="9">火</option>
+				<option value="10">水</option>
+				<option value="11">草</option>
+				<option value="12">電</option>
+				<option value="13">超能力</option>
+				<option value="14">冰</option>
+				<option value="15">龍</option>
+				<option value="16">惡</option>
+				<option value="17">妖精</option>
+			</select><br><br>
+			H_P：<input type="text" id="inputhp1" name="inputhp1" class="s-input2"></input>~
+			<input type="text" id="inputhp2" name="inputhp2" class="s-input2"></input><br>
+			ATK：<input type="text" id="inputatk1" name="inputatk1" class="s-input2"></input>~
+			<input type="text" id="inputatk2" name="inputatk2" class="s-input2"></input><br>
+			DEF：<input type="text" id="inputdef1" name="inputdef1" class="s-input2"></input>~
+			<input type="text" id="inputdef2" name="inputdef2" class="s-input2"></input><br>
+			SPA：<input type="text" id="inputspa1" name="inputspa1" class="s-input2"></input>~
+			<input type="text" id="inputspa2" name="inputspa2" class="s-input2"></input><br>
+			SPD：<input type="text" id="inputspd1" name="inputspd1" class="s-input2"></input>~
+			<input type="text" id="inputspd2" name="inputspd2" class="s-input2"></input><br>
+			SPE：<input type="text" id="inputspe1" name="inputspe1" class="s-input2"></input>~
+			<input type="text" id="inputspe2" name="inputspe2" class="s-input2"></input><br>
+			TOT：<input type="text" id="inputtot1" name="inputtot1" class="s-input2"></input>~
+			<input type="text" id="inputtot2" name="inputtot2" class="s-input2"></input><br><br>
+			
+			<button id="btn1" name="btn1" onclick="readPok()" class="s-btn btn-lg">查詢</button>
+			<button id="btn2" name="btn2" onclick="clr2()" class="s-btn btn-lr">重置</button>
+			<br><br>
+			<p id="output1"></p>
+			<table id="mytable"></table>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+        </div>
+    </div>	
+	
+	<script src="./script/footer.js"></script>
+  </div>
+</body>
+
+</html>
