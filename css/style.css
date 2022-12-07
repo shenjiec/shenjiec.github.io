@@ -12,6 +12,30 @@ p{
   margin-bottom:20px;
   font-weight:Bold;
 }
+table{
+	margin: auto;
+	border: 2px solid #000;
+	line-height: 20px;
+	font-size:8px;
+}
+td{
+	border: 1px solid #000;
+	margin: auto;
+}
+.s-input {
+	text-align:center;
+	width: 240px;
+	height: 36px;
+	font-size: 24px;
+	border-radius:15px;
+}
+.s-input2 {
+	text-align:center;
+	width: 110px;
+	height: 36px;
+	font-size: 24px;
+	border-radius:15px;
+}
 .s-select {
 	text-align:center;
 	width: 120px;
