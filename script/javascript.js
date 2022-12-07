@@ -251,6 +251,48 @@ function getColor(a){
 	switch(a)
 	{
 		case "一般":
+			return "background-Color:#9fa19f; color:white;";
+		case "格鬥":
+			return "background-Color:#DD9988; color:white;";
+		case "飛行":
+			return "background-Color:#81b9ef; color:white;";
+		case "毒":
+			return "background-Color:#9141cb; color:white;";
+		case "地面":
+			return "background-Color:#915121; color:white;";
+		case "岩石":
+			return "background-Color:#afa981; color:white;";
+		case "蟲":
+			return "background-Color:#91a119; color:white;";
+		case "幽靈":
+			return "background-Color:#704170; color:white;";
+		case "鋼":
+			return "background-Color:#60a1b8; color:white;";
+		case "火":
+			return "background-Color:#e62829; color:white;";
+		case "水":
+			return "background-Color:#2980ef; color:white;";
+		case "草":
+			return "background-Color:#3fa129; color:white;";
+		case "電":
+			return "background-Color:#fac000; color:white;";
+		case "超能力":
+			return "background-Color:#ef4179; color:white;";
+		case "冰":
+			return "background-Color:#3fd8ff; color:white;";
+		case "龍":
+			return "background-Color:#5060e1; color:white;";
+		case "惡":
+			return "background-Color:#50413f; color:white;";
+		case "妖精":
+			return "background-Color:#ef70ef; color:white;";
+	}
+	return "";	
+}
+/*function getColor(a){
+	switch(a)
+	{
+		case "一般":
 			return "background-Color:lightgray; color:black;";
 		case "格鬥":
 			return "background-Color:coral; color:white;";
@@ -288,4 +330,4 @@ function getColor(a){
 			return "background-Color:hotpink; color:white;";
 	}
 	return "";	
-}
+}*/
