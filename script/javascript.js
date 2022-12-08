@@ -9,7 +9,7 @@ function menushow(){
 	bd.classList.toggle('active');
 }
 function getTable(){
-	return "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:20px\">H</td><td style=\"width:20px\">A</td><td style=\"width:20px\">B</td><td style=\"width:20px\">C</td><td style=\"width:20px\">D</td><td style=\"width:20px\">S</td><td style=\"width:20px\">T</td></tr>";
+	return "<tr><td style=\"width:30px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:20px\">H</td><td style=\"width:20px\">A</td><td style=\"width:20px\">B</td><td style=\"width:20px\">C</td><td style=\"width:20px\">D</td><td style=\"width:20px\">S</td><td style=\"width:20px\">T</td></tr>";
 }
 function savePok(){
 	var array = save.split('-');
@@ -120,7 +120,7 @@ function readPok() {
 						continue;
 					}
 					count++;
-					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:46px; height:30px; color:black; background-Color:white\" onclick=\"savePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:30px; height:30px; color:black; background-Color:white\" onclick=\"savePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
@@ -160,7 +160,7 @@ function readPokSave() {
 						}
 					}
 					if(!judge){continue;}
-					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:46px; height:30px; color:black; background-Color:white\" onclick=\"deletePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:30px; height:30px; color:black; background-Color:white\" onclick=\"deletePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 					count++;
 				}
 				document.getElementById("mytable").innerHTML = temp;
