@@ -120,7 +120,7 @@ function readPok() {
 						continue;
 					}
 					count++;
-					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:30px; height:30px; color:black; background-Color:white\" onclick=\"savePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"width:30px; height:30px; color:black; background-Color:white\" onclick=\"savePok()\">" + res[i].no + "</a></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
@@ -160,7 +160,7 @@ function readPokSave() {
 						}
 					}
 					if(!judge){continue;}
-					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:30px; height:30px; color:black; background-Color:white\" onclick=\"deletePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"width:30px; height:30px; color:black; background-Color:white\" onclick=\"deletePok()\">" + res[i].no + "</a></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 					count++;
 				}
 				document.getElementById("mytable").innerHTML = temp;
