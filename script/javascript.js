@@ -16,6 +16,12 @@ function savePok(){
 	if(array.length > 12){
 		alert("最多暫存12隻");
 		return;
+	}
+	for(i = 0; i < array.length-1; i++){
+		if(array[i] == event.target.id){
+			alert("該編號已暫存...");
+			return;
+		}
 	}	
 	alert("已新增編號 " + event.target.id + " 至暫存\r\n目前共" + array.length + "隻");
 	save = save + event.target.id + "-";	
