@@ -8,6 +8,9 @@ function menushow(){
 	var bd = document.getElementById('bd');
 	bd.classList.toggle('active');
 }
+function getTable(){
+	return temp = "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:22px\">H</td><td style=\"width:22px\">A</td><td style=\"width:22px\">B</td><td style=\"width:22px\">C</td><td style=\"width:22px\">D</td><td style=\"width:22px\">S</td><td style=\"width:22px\">T</td></tr>";
+}
 function savePok(){
 	var array = save.split('-');
 	if(array.length > 12){
@@ -57,7 +60,7 @@ function readPok() {
 		success: res =>{
 				//console.log(res)
 				var count = 0;
-				var temp = "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:24px\">HP</td><td style=\"width:24px\">ATK</td><td style=\"width:24px\">DEF</td><td style=\"width:24px\">SPA</td><td style=\"width:24px\">SPD</td><td style=\"width:24px\">SPE</td><td style=\"width:24px\">TOT</td></tr>";
+				var temp = getTable();
 				for (i = 0; i < res.length; i++) {
 					if(name != "" && !res[i].name.includes(name)){
 						continue
@@ -141,7 +144,7 @@ function readPokSave() {
 		success: res =>{
 				//console.log(res)
 				var count = 0;
-				var temp = "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:24px\">HP</td><td style=\"width:24px\">ATK</td><td style=\"width:24px\">DEF</td><td style=\"width:24px\">SPA</td><td style=\"width:24px\">SPD</td><td style=\"width:24px\">SPE</td><td style=\"width:24px\">TOT</td></tr>";
+				var temp = getTable();
 				for (i = 0; i < res.length; i++) {
 					var judge = false;
 					for(a = 0; a < array.length-1; a++){
