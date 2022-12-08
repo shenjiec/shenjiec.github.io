@@ -15,8 +15,8 @@ p{
 table{
 	margin: auto;
 	border: 2px solid #000;
-	line-height: 20px;
-	font-size:10px;
+	line-height: 30px;
+	font-size:16px;
 }
 td{
 	border: 1px solid #000;
@@ -31,9 +31,9 @@ td{
 }
 .s-input2 {
 	text-align:center;
-	width: 110px;
-	height: 36px;
-	font-size: 24px;
+	width: 80px;
+	height: 28px;
+	font-size: 20px;
 	border-radius:15px;
 }
 .s-select {
@@ -54,6 +54,9 @@ td{
 }
 .btn-lr{
 	background-color:rosybrown;
+}
+.btn-lb{
+	background-color:lightblue;
 }
 .wrap{
   max-width: 960px;
