@@ -9,7 +9,7 @@ function menushow(){
 	bd.classList.toggle('active');
 }
 function getTable(){
-	return "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:22px\">H</td><td style=\"width:22px\">A</td><td style=\"width:22px\">B</td><td style=\"width:22px\">C</td><td style=\"width:22px\">D</td><td style=\"width:22px\">S</td><td style=\"width:22px\">T</td></tr>";
+	return "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:20px\">H</td><td style=\"width:20px\">A</td><td style=\"width:20px\">B</td><td style=\"width:20px\">C</td><td style=\"width:20px\">D</td><td style=\"width:20px\">S</td><td style=\"width:20px\">T</td></tr>";
 }
 function savePok(){
 	var array = save.split('-');
