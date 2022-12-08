@@ -1,9 +1,33 @@
+var dataUrl= "https://shenjiec.github.io/json/data.json"
+var save = "";
+
 function menushow(){
 	var menu = document.getElementById('menu');
 	menu.classList.toggle('active');
 	
 	var bd = document.getElementById('bd');
 	bd.classList.toggle('active');
+}
+function savePok(){
+	var array = save.split('-');
+	if(array.length > 12){
+		alert("最多暫存12隻");
+		return;
+	}	
+	alert("已新增編號 " + event.target.id + " 至暫存\r\n目前共" + array.length + "隻");
+	save = save + event.target.id + "-";	
+}
+function deletePok(){
+	var array = save.split('-');
+	var temp = "";
+	for(i = 0; i < array.length-1; i++){
+		if(array[i] == event.target.id){
+			continue;
+		}
+		temp = temp + array[i] + "-";
+	}	
+	save = temp;
+	readPokSave();
 }
 function readPok() {
 	var name = document.getElementById("inputname").value
@@ -22,9 +46,7 @@ function readPok() {
 	var spe1 = document.getElementById("inputspe1").value;
 	var spe2 = document.getElementById("inputspe2").value;
 	var tot1 = document.getElementById("inputtot1").value;
-	var tot2 = document.getElementById("inputtot2").value;
-	
-	var dataUrl= "https://shenjiec.github.io/json/data.json"
+	var tot2 = document.getElementById("inputtot2").value;	
 	$.ajax({
 		url: dataUrl,
 		method: 'GET',
@@ -35,7 +57,7 @@ function readPok() {
 		success: res =>{
 				//console.log(res)
 				var count = 0;
-				var temp = "<tr><td style=\"width:30px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:21px\">HP</td><td style=\"width:21px\">ATK</td><td style=\"width:21px\">DEF</td><td style=\"width:21px\">SPA</td><td style=\"width:21px\">SPD</td><td style=\"width:21px\">SPE</td><td style=\"width:21px\">TOT</td></tr>";
+				var temp = "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:24px\">HP</td><td style=\"width:24px\">ATK</td><td style=\"width:24px\">DEF</td><td style=\"width:24px\">SPA</td><td style=\"width:24px\">SPD</td><td style=\"width:24px\">SPE</td><td style=\"width:24px\">TOT</td></tr>";
 				for (i = 0; i < res.length; i++) {
 					if(name != "" && !res[i].name.includes(name)){
 						continue
@@ -89,10 +111,52 @@ function readPok() {
 						continue;
 					}
 					count++;
-					temp += "<tr><td>" + res[i].no + "</td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:46px; height:32px; color:black; background-Color:white\" onclick=\"savePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
+				document.getElementById("output2").innerText = "點擊寶可夢編號新增至暫存";
+			},
+		error: err =>{
+				console.log(err)
+			},
+	});
+}
+function readPokSave() {
+	if(save==""){
+		alert("尚無暫存...\r\n點擊寶可夢編號即可暫存");
+		document.getElementById("mytable").innerHTML = "";
+		document.getElementById("output1").innerText = "";
+		document.getElementById("output2").innerText = "";
+		return;
+	}
+	var array = save.split('-');
+	$.ajax({
+		url: dataUrl,
+		method: 'GET',
+		dataType: 'json',
+		data: '',
+		async: true,
+	   
+		success: res =>{
+				//console.log(res)
+				var count = 0;
+				var temp = "<tr><td style=\"width:46px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:24px\">HP</td><td style=\"width:24px\">ATK</td><td style=\"width:24px\">DEF</td><td style=\"width:24px\">SPA</td><td style=\"width:24px\">SPD</td><td style=\"width:24px\">SPE</td><td style=\"width:24px\">TOT</td></tr>";
+				for (i = 0; i < res.length; i++) {
+					var judge = false;
+					for(a = 0; a < array.length-1; a++){
+						if(res[i].no == array[a]){
+							judge = true;
+							break;
+						}
+					}
+					if(!judge){continue;}
+					temp += "<tr><td><button id=\"" + res[i].no + "\" style=\"width:46px; height:32px; color:black; background-Color:white\" onclick=\"deletePok()\">" + res[i].no + "</button></td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					count++;
+				}
+				document.getElementById("mytable").innerHTML = temp;
+				document.getElementById("output1").innerText = count + " 符合結果";
+				document.getElementById("output2").innerText = "點擊寶可夢編號移除暫存";
 			},
 		error: err =>{
 				console.log(err)
@@ -127,6 +191,8 @@ function clr2(){
 	document.getElementById("inputtot2").value = "";
 	document.getElementById("mytable").innerHTML = "";
 	document.getElementById("output1").innerText = "";
+	document.getElementById("output2").innerText = "";
+	save = "";
 }
 function cal(){
 	document.getElementById("output0").innerText = "";
