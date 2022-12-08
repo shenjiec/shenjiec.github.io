@@ -201,7 +201,6 @@ function clr2(){
 	document.getElementById("mytable").innerHTML = "";
 	document.getElementById("output1").innerText = "";
 	document.getElementById("output2").innerText = "";
-	save = "";
 }
 function cal(){
 	document.getElementById("output0").innerText = "";
