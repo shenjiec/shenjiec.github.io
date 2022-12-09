@@ -9,7 +9,7 @@ function menushow(){
 	bd.classList.toggle('active');
 }
 function getTable(){
-	return "<tr><td style=\"width:30px\">編號</td><td style=\"width:80px\">名稱</td><td colspan=2 style=\"width:120px\">屬性</td><td style=\"width:20px\">H</td><td style=\"width:20px\">A</td><td style=\"width:20px\">B</td><td style=\"width:20px\">C</td><td style=\"width:20px\">D</td><td style=\"width:20px\">S</td><td style=\"width:20px\">T</td></tr>";
+	return "<tr><td>編號</td><td>名稱</td><td colspan=2>屬性</td><td>H</td><td>A</td><td>B</td><td>C</td><td>D</td><td>S</td><td>T</td></tr>";
 }
 function savePok(){
 	var array = save.split('-');
@@ -120,12 +120,12 @@ function readPok() {
 						continue;
 					}
 					count++;
-					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"font-size: 12px; color:black;\" onclick=\"savePok()\">" + res[i].no + "</a></td><td><a style=\"font-size: 12px; color:black;\" onclick=\"cal2("+getValue(res[i].c1)+","+getValue(res[i].c2)+",'"+res[i].name+"')\">" + res[i].name + "</a></td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td id=\"" + res[i].no + "\" onclick=\"savePok()\">" + res[i].no + "</td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2, res[i].name) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
 				document.getElementById("output2").innerText = "點擊寶可夢編號新增至暫存";
-				document.getElementById("output3").innerText = "點擊寶可夢名稱計算屬性傷害倍率";
+				document.getElementById("output3").innerText = "點擊寶可夢屬性計算傷害倍率";
 			},
 		error: err =>{
 				console.log(err)
@@ -162,49 +162,26 @@ function readPokSave() {
 						}
 					}
 					if(!judge){continue;}
-					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"font-size: 12px; color:black;\" onclick=\"deletePok()\">" + res[i].no + "</a></td><td><a style=\"font-size: 12px; color:black;\" onclick=\"cal2("+getValue(res[i].c1)+","+getValue(res[i].c2)+",'"+res[i].name+"')\">" + res[i].name + "</a></td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td id=\"" + res[i].no + "\" onclick=\"savePok()\">" + res[i].no + "</td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2, res[i].name) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 					count++;
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
 				document.getElementById("output2").innerText = "點擊寶可夢編號移除暫存";
-				document.getElementById("output3").innerText = "點擊寶可夢名稱計算屬性傷害倍率";
+				document.getElementById("output3").innerText = "點擊寶可夢屬性計算傷害倍率";
 			},
 		error: err =>{
 				console.log(err)
 			},
 	});
 }
-function clr(){
-	document.getElementById("myPokemon1").selectedIndex = 0;
-	document.getElementById("myPokemon2").selectedIndex = 0;
-	document.getElementById("output0").innerText = "";
-	document.getElementById("output1").innerText = "";
-	document.getElementById("output2").innerText = "";
-	document.getElementById("output3").innerText = "";
-}
-function clr2(){
-	document.getElementById("myPokemon1").selectedIndex = 0;
-	document.getElementById("myPokemon2").selectedIndex = 0;
-	document.getElementById("inputname").value = "";
-	document.getElementById("inputhp1").value = "";
-	document.getElementById("inputhp2").value = "";
-	document.getElementById("inputatk1").value = "";
-	document.getElementById("inputatk2").value = "";
-	document.getElementById("inputdef1").value = "";
-	document.getElementById("inputdef2").value = "";
-	document.getElementById("inputspa1").value = "";
-	document.getElementById("inputspa2").value = "";
-	document.getElementById("inputspd1").value = "";
-	document.getElementById("inputspd2").value = "";
-	document.getElementById("inputspe1").value = "";
-	document.getElementById("inputspe2").value = "";
-	document.getElementById("inputtot1").value = "";
-	document.getElementById("inputtot2").value = "";
-	document.getElementById("mytable").innerHTML = "";
-	document.getElementById("output1").innerText = "";
-	document.getElementById("output2").innerText = "";
-	document.getElementById("output3").innerText = "";
+function getAttribute(a, b, name){
+	if(b == ""){//單屬性合併2格
+		return "<td colspan=2 onclick=\"cal2("+getValue(a)+","+getValue(b)+",'"+name+"')\" style=\"" + getColor(a) + "\">" + a + "</td>";
+	}
+	else{
+		return "<td onclick=\"cal2("+getValue(a)+","+getValue(b)+",'"+name+"')\" style=\"" + getColor(a) + "\">" + a + "</td><td onclick=\"cal2("+getValue(a)+","+getValue(b)+",'"+name+"')\" style=\"" + getColor(b) + "\">" + b + "</td>";		
+	}
 }
 function cal(){
 	var v1 = document.getElementById("myPokemon1").value;
@@ -292,14 +269,6 @@ function calculate(v1, v2){
 		}
 	}
 	return temp;
-}
-function getAttribute(a, b){
-	if(b == ""){		
-		return "<td colspan=2 style=\"" + getColor(a) + "\">" + a + "</td>";//單屬性合併2格
-	}
-	else{
-		return "<td style=\"" + getColor(a) + "\">" + a + "</td><td style=\"" + getColor(b) + "\">" + b + "</td>";		
-	}
 }
 function getColor(a){
 	switch(a)
@@ -426,4 +395,35 @@ function getValue(a){
 			return 17;
 	}	
 	return -1;
+}
+function clr(){
+	document.getElementById("myPokemon1").selectedIndex = 0;
+	document.getElementById("myPokemon2").selectedIndex = 0;
+	document.getElementById("output0").innerText = "";
+	document.getElementById("output1").innerText = "";
+	document.getElementById("output2").innerText = "";
+	document.getElementById("output3").innerText = "";
+}
+function clr2(){
+	document.getElementById("myPokemon1").selectedIndex = 0;
+	document.getElementById("myPokemon2").selectedIndex = 0;
+	document.getElementById("inputname").value = "";
+	document.getElementById("inputhp1").value = "";
+	document.getElementById("inputhp2").value = "";
+	document.getElementById("inputatk1").value = "";
+	document.getElementById("inputatk2").value = "";
+	document.getElementById("inputdef1").value = "";
+	document.getElementById("inputdef2").value = "";
+	document.getElementById("inputspa1").value = "";
+	document.getElementById("inputspa2").value = "";
+	document.getElementById("inputspd1").value = "";
+	document.getElementById("inputspd2").value = "";
+	document.getElementById("inputspe1").value = "";
+	document.getElementById("inputspe2").value = "";
+	document.getElementById("inputtot1").value = "";
+	document.getElementById("inputtot2").value = "";
+	document.getElementById("mytable").innerHTML = "";
+	document.getElementById("output1").innerText = "";
+	document.getElementById("output2").innerText = "";
+	document.getElementById("output3").innerText = "";
 }
