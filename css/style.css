@@ -199,7 +199,7 @@ td{
 @media(max-width:768px){
   table{
 	font-size:10px;
-	width: 360px;
+	width: 350px;
   }
   .header{
     position:fixed;
