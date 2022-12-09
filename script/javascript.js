@@ -120,12 +120,12 @@ function readPok() {
 						continue;
 					}
 					count++;
-					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"font-size: 12px; color:black;\" onclick=\"savePok()\">" + res[i].no + "</a></td><td><a style=\"font-size: 12px; color:black;\" onclick=\"cal2("+getValue(res[i].c1)+","+getValue(res[i].c2)+")\">" + res[i].name + "</a></td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"font-size: 12px; color:black;\" onclick=\"savePok()\">" + res[i].no + "</a></td><td><a style=\"font-size: 12px; color:black;\" onclick=\"cal2("+getValue(res[i].c1)+","+getValue(res[i].c2)+",'"+res[i].name+"')\">" + res[i].name + "</a></td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
 				document.getElementById("output2").innerText = "點擊寶可夢編號新增至暫存";
-				document.getElementById("output3").innerText = "點擊寶可夢名稱計算屬性弱點倍率";
+				document.getElementById("output3").innerText = "點擊寶可夢名稱計算屬性傷害倍率";
 			},
 		error: err =>{
 				console.log(err)
@@ -162,13 +162,13 @@ function readPokSave() {
 						}
 					}
 					if(!judge){continue;}
-					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"font-size: 12px; color:black;\" onclick=\"deletePok()\">" + res[i].no + "</a></td><td><a style=\"font-size: 12px; color:black;\" onclick=\"cal2("+getValue(res[i].c1)+","+getValue(res[i].c2)+")\">" + res[i].name + "</a></td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td><a id=\"" + res[i].no + "\" style=\"font-size: 12px; color:black;\" onclick=\"deletePok()\">" + res[i].no + "</a></td><td><a style=\"font-size: 12px; color:black;\" onclick=\"cal2("+getValue(res[i].c1)+","+getValue(res[i].c2)+",'"+res[i].name+"')\">" + res[i].name + "</a></td>" + getAttribute(res[i].c1, res[i].c2) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 					count++;
 				}
 				document.getElementById("mytable").innerHTML = temp;
 				document.getElementById("output1").innerText = count + " 符合結果";
 				document.getElementById("output2").innerText = "點擊寶可夢編號移除暫存";
-				document.getElementById("output3").innerText = "點擊寶可夢名稱計算屬性弱點倍率";
+				document.getElementById("output3").innerText = "點擊寶可夢名稱計算屬性傷害倍率";
 			},
 		error: err =>{
 				console.log(err)
@@ -218,9 +218,26 @@ function cal(){
 	document.getElementById("output2").innerText = sub[2];
 	document.getElementById("output3").innerText = sub[3];
 }
-function cal2(v1, v2){
+function cal2(v1, v2, name){
 	var sub = calculate(v1, v2);
-	alert(sub[0] + "\r\n" + sub[1] + "\r\n" + sub[2] + "\r\n" + sub[3]);
+	var temp = name + " ("+getString(v1);
+	if(v2 != -1){
+		temp = temp + " / " + getString(v2);
+	}
+	temp = temp + ")\r\n";
+	if(sub[0] != ""){
+		temp = temp + "\r\n" + sub[0];
+	}
+	if(sub[1] != ""){
+		temp = temp + "\r\n" + sub[1];
+	}
+	if(sub[2] != ""){
+		temp = temp + "\r\n" + sub[2];
+	}
+	if(sub[3] != ""){
+		temp = temp + "\r\n" + sub[3];
+	}
+	alert(temp);
 }
 function calculate(v1, v2){
 	var array  = new Array();
