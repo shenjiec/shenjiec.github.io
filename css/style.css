@@ -23,6 +23,13 @@ td{
 	border: 1px solid #000;
 	margin: auto;
 }
+.tableA{
+	margin: auto;
+	border: 2px solid #000;
+	line-height: 30px;
+	font-size:20px;
+	width: 300px;
+}
 .s-input {
 	text-align:center;
 	width: 240px;
@@ -36,6 +43,20 @@ td{
 	height: 28px;
 	font-size: 20px;
 	border-radius:15px;
+}
+.s-inputA {
+	text-align:center;
+	width: 120px;
+	height: 30px;
+	font-size: 20px;
+	border-radius:10px;
+}
+.s-selectA {
+	text-align:center;
+	width: 130px;
+	height: 35px;
+	font-size: 20px;
+	border-radius:10px;
 }
 .s-select {
 	text-align:center;
