@@ -162,7 +162,7 @@ function readPokSave() {
 						}
 					}
 					if(!judge){continue;}
-					temp += "<tr><td id=\"" + res[i].no + "\" onclick=\"savePok()\">" + res[i].no + "</td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2, res[i].name) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
+					temp += "<tr><td id=\"" + res[i].no + "\" onclick=\"deletePok()\">" + res[i].no + "</td><td>" + res[i].name + "</td>" + getAttribute(res[i].c1, res[i].c2, res[i].name) + "<td>" + res[i].hp + "</td><td>" + res[i].atk + "</td><td>" + res[i].def + "</td><td>" + res[i].spa + "</td><td>" + res[i].spd + "</td><td>" + res[i].spe + "</td><td>" + res[i].tot + "</td></tr>";
 					count++;
 				}
 				document.getElementById("mytable").innerHTML = temp;
