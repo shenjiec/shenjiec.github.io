@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <title>shenjiec</title>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+	<script type="text/javascript" src="script/soloscript.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrap">
+	<script src="./script/header.js"></script>	
+    <div class="contentbox">
+		<div class="content">
+			<button id="btn0" name="btn0" onclick="location.href='soloMenu.html'" class="s-btn">返回</button><br/><br/>
+			<table class="tableA">
+				<tr>
+					<td>裝備名稱：</td>
+					<td><input type="text" id="inputname" name="inputname" class="s-inputA"></input></td>
+				</tr>
+				<tr>
+					<td>裝備部位：</td>
+					<td>
+						<select id="mypart" name="mypart" class="s-selectA">
+							<option value="-1"></option>
+							<option value="0">part1</option>
+							<option value="1">part2</option>
+							<option value="2">part3</option>
+							<option value="3">part4</option>
+							<option value="4">part5</option>
+							<option value="5">part6</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>裝備類型：</td>
+					<td>
+						<select id="mytype" name="mytype" class="s-selectA">
+							<option value="-1"></option>
+							<option value="0">type1</option>
+							<option value="1">type2</option>
+							<option value="2">type3</option>
+							<option value="3">type4</option>
+							<option value="4">type5</option>
+							<option value="5">type6</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>使用方式：</td>
+					<td>
+						<select id="myuse" name="myuse" class="s-selectA">
+							<option value="-1"></option>
+							<option value="0">use1</option>
+							<option value="1">use2</option>
+							<option value="2">use3</option>
+							<option value="3">use4</option>
+							<option value="4">use5</option>
+							<option value="5">use6</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>主屬性：</td>
+					<td>
+						<select id="mymain" name="mymain" class="s-selectA">
+							<option value="-1"></option>
+							<option value="0">main1</option>
+							<option value="1">main2</option>
+							<option value="2">main3</option>
+							<option value="3">main4</option>
+							<option value="4">main5</option>
+							<option value="5">main6</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>符文標籤：</td>
+					<td><input type="text" id="rune" name="rune" class="s-inputA"></input></td>
+				</tr>
+				<tr>
+					<td>裝備效果：</td>
+					<td><input type="text" id="effect" name="effect" class="s-inputA"></input></td>
+				</tr>
+				<tr>
+					<td>裝備來源：</td>
+					<td>
+						<select id="mysource" name="mysource" class="s-selectA">
+							<option value="-1"></option>
+							<option value="0">source1</option>
+							<option value="1">source2</option>
+							<option value="2">source3</option>
+							<option value="3">source4</option>
+							<option value="4">source5</option>
+							<option value="5">source6</option>
+						</select>
+					</td>
+				</tr>
+			</table><br><br>			
+			<button id="btn1" name="btn1" onclick="readSol()" class="s-btn btn-lg">查詢</button>
+			<button id="btn2" name="btn2" onclick="clr()" class="s-btn btn-lr">重置</button>
+			<button id="btn3" name="btn3" onclick="readSolSave()" class="s-btn btn-lb">暫存</button>
+			<br><br>
+			<p id="output1"></p>
+			<p id="output2"></p>
+			<p id="output3"></p>
+			<table id="mytable"></table>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+			<p></p>
+        </div>
+    </div>	
+	
+	<script src="./script/footer.js"></script>
+  </div>
+</body>
+
+</html>
